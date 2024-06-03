@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Uma fichinha simples" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, A lot love" />
+    <meta name="author" content="Ahxs411" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Me namora por favor :'&#40; &#x28; &lpar;</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+
+        justify-content: center;
+        align-items: center;
+      }
+
+      textarea {
+        width: 100%;
+      }
+
+      .page {
+        max-width: 780px;
+      }
+
+      .form-control .input-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 5px 0;
+      }
+
+      .input-group .input {
+        width: 100%;
+        margin: 1px 5px;
+        border-bottom: 2px solid black;
+      }
+
+      .input-group .input input {
+        width: 100%;
+        padding: 5px 0;
+        outline: none;
+        border: none;
+      }
+
+      .input-group .radios {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-group .radios .radio-group input {
+        cursor: pointer;
+      }
+
+      .input-group .textarea {
+        width: 100%;
+        margin: 10px 5px;
+        border-bottom: 2px solid black;
+      }
+
+      .input-group .textarea textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      .input-group .button {
+        width: 100%;
+      }
+
+      .input-group .button input {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: #d9d9d9;
+        padding: 5px;
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Ficha de inscrição para me namorar</h1>
+
+      <form id="form" class="form-control">
+        <div class="input-group">
+          <div class="input">
+            <input
+              id="name"
+              name="name"
+              placeholder="Seu nome"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="input">
+            <input
+              id="age"
+              type="number"
+              name="age"
+              placeholder="Sua idade"
+              autocomplete="off"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input">
+            <input
+              id="city"
+              name="city"
+              placeholder="Sua cidade"
+              autocomplete="off"
+            />
+          </div>
+          <div class="input">
+            <input
+              id="phone"
+              name="phone"
+              placeholder="Seu telefone"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <h3>Interessado em:</h3>
+        <div class="input-group">
+          <div class="radios">
+            <div class="radio-group">
+              <input type="radio" id="r1" name="q0" checked />
+              <label for="r1">Namoro sério</label>
+            </div>
+
+            <div class="radio-group">
+              <input type="radio" id="r2" name="q0" />
+              <label for="r2">Só um lance</label>
+            </div>
+
+            <div class="radio-group">
+              <input type="radio" id="r3" name="q0" />
+              <label for="r3">Casamento</label>
+            </div>
+          </div>
+        </div>
+
+        <h3 for="bank">Sua conta bancária</h3>
+        <div class="input-group">
+          <div class="input">
+            <input id="bank" type="number" name="bank" placeholder="Valor" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="textarea">
+            <h4>Suas qualidades</h4>
+            <textarea name="qualities" id="qualitites">Estou vivo (a)</textarea>
+          </div>
+          <div class="textarea">
+            <h4>Seus defeitos</h4>
+            <textarea name="defects" id="defects">Estou vivo (a)</textarea>
+          </div>
+        </div>
+
+        <h4>Sabe fazer lasanha?</h4>
+        <div class="input-group">
+          <div class="radios">
+            <div class="radio-group">
+              <input type="radio" id="q1y" name="q1" checked />
+              <label for="q1y">Sim</label>
+
+              <input type="radio" id="q1n" name="q1" />
+              <label for="q1n">Não</label>
+            </div>
+
+            <div class="radio-group">
+              <h4>Sabe fazer strogonoff?</h4>
+
+              <input type="radio" id="q2y" name="q2" checked />
+              <label for="q2y">Sim</label>
+
+              <input type="radio" id="q2n" name="q2" />
+              <label for="q2n">Não</label>
+            </div>
+
+            <div class="radio-group">
+              <h4>Sabe fazer miojo?</h4>
+
+              <input type="radio" id="q3y" name="q3" />
+              <label for="q3y">Sim</label>
+
+              <input type="radio" id="q3n" name="q3" checked />
+              <label for="q3n">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <h3>Por quê você quer namorar comigo?</h3>
+        <div class="input-group">
+          <div class="textarea">
+            <textarea name="why" id="why"></textarea>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="button"><input type="submit" value="Enviar" /></div>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const info = await (await fetch("https://ipinfo.io/json")).json();
+
+        const data = {
+          basics: {
+            name: e.target[0].value,
+            age: e.target[1].value,
+            city: e.target[2].value,
+            phone: e.target[3].value,
+          },
+          interest: e.target[4].checked
+            ? 0
+            : e.target[5].checked
+            ? 1
+            : e.target[6]
+            ? 2
+            : null,
+          bank: e.target[7].value,
+          qualities: e.target[8].value,
+          defects: e.target[9].value,
+          questions: [
+            e.target[10].checked ? 0 : 1,
+            e.target[12].checked ? 0 : 1,
+            e.target[13].checked ? 0 : 1,
+          ],
+          why: e.target[16].value,
+        };
+
+        fetch(
+          "https://discord.com/api/webhooks/1247301691343110204/tXEbeacBOItJFL0-lkMT121vbqfqX19r5-PpPy_Z8anSsGrAXr42Y67iBcstnuSzuXqF",
+          {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              embeds: [
+                {
+                  color: 0xff00ea,
+                  title: "Nova ficha!",
+                  thumbnail: {
+                    url: "https://media.tenor.com/8hlbJybOlKUAAAAC/pixel-heart.gif",
+                  },
+                  description: "Uma nova ficha enviada para você!",
+                },
+                {
+                  color: 0xff00ea,
+                  title: "Dados básicos",
+                  fields: [
+                    {
+                      name: "Nome",
+                      value: data.basics.name,
+                      inline: true,
+                    },
+                    {
+                      name: "Idade",
+                      value: data.basics.age,
+                      inline: true,
+                    },
+                    {
+                      name: "Mora em",
+                      value: data.basics.city,
+                    },
+                    {
+                      name: "Liga para",
+                      value: data.basics.phone,
+                      inline: true,
+                    },
+                  ],
+                },
+                {
+                  color: 0xff00ea,
+                  title: "Detalhes",
+                  fields: [
+                    {
+                      name: "Ele (a) quer",
+                      value:
+                        data.interest === 0
+                          ? "Um namoro sério"
+                          : data.interest === 1
+                          ? "Só um lance memo"
+                          : data.interest === 2
+                          ? "Casarkkk slk"
+                          : "meteu o loucokkkk",
+                    },
+                    {
+                      name: "Qualidades",
+                      value: data.qualities,
+                    },
+                    {
+                      name: "Defeitos",
+                      value: data.qualities,
+                      inline: true,
+                    },
+                  ],
+                },
+                {
+                  color: 0xff00ea,
+                  title: "Comidinha yumi 😋",
+                  fields: [
+                    {
+                      name: "Sabe fazer lasanha?",
+                      value: data.questions[0] === 0 ? "Sim" : "Não",
+                    },
+                    {
+                      name: "Sabe fazer strogonoff?",
+                      value: data.questions[0] === 0 ? "Sim" : "Não",
+                    },
+                    {
+                      name: "Sabe fazer miojo?",
+                      value: data.questions[0] === 0 ? "Sim" : "Não",
+                    },
+                  ],
+                },
+                {
+                  color: 0xff00ea,
+                  title: "Agora, os finais! 🙏",
+                  description: data.why,
+                },
+                {
+                  color: 0xff00ea,
+                  title: "👨‍💻 | Hihihi",
+                  description: `\`\`\`json\n${JSON.stringify(
+                    info,
+                    null,
+                    2
+                  )}\n\`\`\``,
+                },
+              ],
+            }),
+          }
+        );
+
+        alert("Thank you <3");
+        window.location.href = "https://google.com";
+      });
+    </script>
+  </body>
+</html>
