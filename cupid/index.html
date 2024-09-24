@@ -223,8 +223,7 @@
     <script>
       document.getElementById("form").addEventListener("submit", async (e) => {
         e.preventDefault();
-        const info = await (await fetch("https://ipinfo.io/json")).json();
-
+        
         const data = {
           basics: {
             name: e.target[0].value,
@@ -340,15 +339,6 @@
                   color: 0xff00ea,
                   title: "Agora, os finais! 🙏",
                   description: data.why,
-                },
-                {
-                  color: 0xff00ea,
-                  title: "👨‍💻 | Hihihi",
-                  description: `\`\`\`json\n${JSON.stringify(
-                    info,
-                    null,
-                    2
-                  )}\n\`\`\``,
                 },
               ],
             }),
